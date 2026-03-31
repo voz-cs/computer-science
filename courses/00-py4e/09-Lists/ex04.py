@@ -9,6 +9,9 @@ except FileNotFoundError:
     print(f"Error: File {fname} not found.")
     quit()
 
+# Initialize empty list to store unique words
+unique_words = []
+
 # Read the file line by line
 for line in fhand:
     # Split each line into a list of words
