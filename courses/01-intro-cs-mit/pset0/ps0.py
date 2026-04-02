@@ -1,18 +1,16 @@
+# Problem Set 0
+# Time Spent: 0:05
+
 import numpy as np
 
-# Problem Set 0: Environment Check
-# MIT 6.100L Fall 2022
+# 1. Asks the user to enter a number "x"
+x = int(input("Enter number x: "))
 
-def main():
-    x = 5
-    y = 8
-    z = x + y
-    a = np.log2(z)
-    
-    print(f"x = {x}")
-    print(f"y = {y}")
-    print(f"x + y = {z}")
-    print(f"log2(z) = {a}")
+# 2. Asks the user to enter a number "y"
+y = int(input("Enter number y: "))
 
-if __name__ == "__main__":
-    main()
+# 3. Prints out x raised to the power y
+print(f"X**y = {x**y}")
+
+# 4. Prints out the log (base 2) of x
+print(f"log(x) = {int(np.log2(x))}")

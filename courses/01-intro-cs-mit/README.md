@@ -38,7 +38,7 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 ### 🧱 Phase 1: Algorithmic Foundations
 
 - [x] **L01:** Introduction (Computation, Declarative vs Imperative)
-- [ ] **L02:** Strings, Input/Output, Branching
+- [x] **L02:** Strings, Input/Output, Branching
 - [ ] **L03:** Iteration
 - [ ] **L04:** Loops over Strings, Guess-and-Check, Binary
 - [ ] **L05:** Floats and Approximation Methods
