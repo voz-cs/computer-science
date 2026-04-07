@@ -39,9 +39,9 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 
 - [x] **L01:** Introduction (Computation, Declarative vs Imperative)
 - [x] **L02:** Strings, Input/Output, Branching
-- [ ] **L03:** Iteration
-- [ ] **L04:** Loops over Strings, Guess-and-Check, Binary
-- [ ] **L05:** Floats and Approximation Methods
+- [x] **L03:** Iteration
+- [x] **L04:** Loops over Strings, Guess-and-Check, Binary
+- [/] **L05:** Floats and Approximation Methods (Đang tu luyện)
 - [ ] **L06:** Bisection Search
 
 ### 🏗️ Phase 2: Abstraction & Modular Design
