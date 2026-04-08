@@ -48,7 +48,7 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 
 - [x] **L07:** Decomposition, Abstraction, Functions
 - [x] **L08:** Functions as Objects
-- [ ] **L09:** Lambda Functions, Tuples, and Lists
+- [x] **L09:** Lambda Functions, Tuples, and Lists
 - [ ] **L10:** Lists, Mutability
 - [ ] **L11:** Aliasing, Cloning
 - [ ] **L12:** List Comprehension, Testing, Debugging
@@ -82,7 +82,7 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 
 - [x] **PSET 0:** Environment Initialization
 - [x] **PSET 1:** Simple Algorithms (Branching/Loops)
-- [ ] **PSET 2:** Functions & Abstraction
+- [/] **PSET 2:** Functions & Abstraction
 - [ ] **PSET 3:** Recursion & Dictionaries
 - [ ] **PSET 4:** Object Oriented Programming
 - [ ] **PSET 5:** Complexity & Simulations
