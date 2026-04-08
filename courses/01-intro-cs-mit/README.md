@@ -41,12 +41,12 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 - [x] **L02:** Strings, Input/Output, Branching
 - [x] **L03:** Iteration
 - [x] **L04:** Loops over Strings, Guess-and-Check, Binary
-- [/] **L05:** Floats and Approximation Methods (Đang tu luyện)
-- [ ] **L06:** Bisection Search
+- [x] **L05:** Floats and Approximation Methods
+- [x] **L06:** Bisection Search
 
 ### 🏗️ Phase 2: Abstraction & Modular Design
 
-- [ ] **L07:** Decomposition, Abstraction, Functions
+- [/] **L07:** Decomposition, Abstraction, Functions (Đang tu luyện)
 - [ ] **L08:** Functions as Objects
 - [ ] **L09:** Lambda Functions, Tuples, and Lists
 - [ ] **L10:** Lists, Mutability
