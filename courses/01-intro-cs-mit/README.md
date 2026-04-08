@@ -46,8 +46,8 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 
 ### 🏗️ Phase 2: Abstraction & Modular Design
 
-- [/] **L07:** Decomposition, Abstraction, Functions (Đang tu luyện)
-- [ ] **L08:** Functions as Objects
+- [x] **L07:** Decomposition, Abstraction, Functions
+- [x] **L08:** Functions as Objects
 - [ ] **L09:** Lambda Functions, Tuples, and Lists
 - [ ] **L10:** Lists, Mutability
 - [ ] **L11:** Aliasing, Cloning
@@ -80,8 +80,8 @@ Khóa học này không chỉ dạy cú pháp Python, mà là một hành trình
 
 ## 🛠 Problem Sets (PSETs)
 
-- [ ] **PSET 0:** Environment Initialization
-- [ ] **PSET 1:** Simple Algorithms (Branching/Loops)
+- [x] **PSET 0:** Environment Initialization
+- [x] **PSET 1:** Simple Algorithms (Branching/Loops)
 - [ ] **PSET 2:** Functions & Abstraction
 - [ ] **PSET 3:** Recursion & Dictionaries
 - [ ] **PSET 4:** Object Oriented Programming

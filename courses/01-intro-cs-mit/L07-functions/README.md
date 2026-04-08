@@ -1,6 +1,6 @@
 # 📜 L07: DECOMPOSITION, ABSTRACTION, FUNCTIONS
 
-**Cảnh giới:** Luyện Khí Tầng 07 | **Môn phái:** MIT 6.100L | **Trạng thái:** [ĐANG VẬN CÔNG 🟡]
+**Cảnh giới:** Luyện Khí Tầng 07 | **Môn phái:** MIT 6.100L | **Trạng thái:** [ĐẠI THÀNH 🟢]
 
 ---
 
