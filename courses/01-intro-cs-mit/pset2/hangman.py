@@ -54,8 +54,8 @@ def has_player_won(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed,
         False otherwise
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    # Trận pháp: Kiểm tra xem mọi linh ấn trong secret_word đều đã nằm trong letters_guessed chưa
+    return all(char in letters_guessed for char in secret_word)
 
 
 def get_word_progress(secret_word, letters_guessed):
@@ -67,8 +67,8 @@ def get_word_progress(secret_word, letters_guessed):
     returns: string, comprised of letters and asterisks (*) that represents
         which letters in secret_word have not been guessed so far
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    # Trận pháp: Duyệt qua từ bí mật, nếu thấy linh ấn đã đoán thì hiện, ngược lại dấu bằng '*'
+    return "".join(char if char in letters_guessed else "*" for char in secret_word)
 
 
 def get_available_letters(letters_guessed):
@@ -80,9 +80,9 @@ def get_available_letters(letters_guessed):
       letters have not yet been guessed. The letters should be returned in
       alphabetical order
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
+    # Trận pháp: Loại bỏ các chữ cái đã đoán khỏi bảng Alphabet (a-z)
+    alphabet = string.ascii_lowercase
+    return "".join(char for char in alphabet if char not in letters_guessed)
 
 
 def hangman(secret_word, with_help):
@@ -91,63 +91,84 @@ def hangman(secret_word, with_help):
     with_help: boolean, this enables help functionality if true.
 
     Starts up an interactive game of Hangman.
-
-    * At the start of the game, let the user know how many
-      letters the secret_word contains and how many guesses they start with.
-
-    * The user should start with 10 guesses.
-
-    * Before each round, you should display to the user how many guesses
-      they have left and the letters that the user has not yet guessed.
-
-    * Ask the user to supply one guess per round. Remember to make
-      sure that the user puts in a single letter (or help character '!'
-      for with_help functionality)
-
-    * If the user inputs an incorrect consonant, then the user loses ONE guess,
-      while if the user inputs an incorrect vowel (a, e, i, o, u),
-      then the user loses TWO guesses.
-
-    * The user should receive feedback immediately after each guess
-      about whether their guess appears in the computer's word.
-
-    * After each guess, you should display to the user the
-      partially guessed word so far.
-
-    -----------------------------------
-    with_help functionality
-    -----------------------------------
-    * If the guess is the symbol !, you should reveal to the user one of the
-      letters missing from the word at the cost of 3 guesses. If the user does
-      not have 3 guesses remaining, print a warning message. Otherwise, add
-      this letter to their guessed word and continue playing normally.
-
-    Follows the other limitations detailed in the problem write-up.
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    guesses_left = 10
+    letters_guessed = []
+    hints_used = 0
+    
+    print("Welcome to Hangman!")
+    print(f"I am thinking of a word that is {len(secret_word)} letters long.")
+    
+    while guesses_left > 0:
+        print("------")
+        # Xử lý số ít/số nhiều cho linh lực
+        guess_str = "guess" if guesses_left == 1 else "guesses"
+        print(f"You have {guesses_left} {guess_str} left.")
+        print(f"Available letters: {get_available_letters(letters_guessed)}")
+        
+        user_input = input("Please guess a letter: ").lower()
+        
+        # Hóa giải chế độ Cầu cứu (Help Mode)
+        if with_help and user_input == "!":
+            if guesses_left < 3:
+                print(f"Oops! Not enough guesses for a hint: {get_word_progress(secret_word, letters_guessed)}")
+            else:
+                # Ghi nhận dùng Hint và trừ linh lực ngay
+                hints_used += 1
+                guesses_left -= 3
+                
+                missing_letters = [char for char in secret_word if char not in letters_guessed]
+                if missing_letters:
+                    revealed = random.choice(missing_letters)
+                    letters_guessed.append(revealed)
+                    print(f"Letter revealed: {revealed}")
+                    print(f"{get_word_progress(secret_word, letters_guessed)}")
+                
+                # Kiểm tra thắng lợi sau khi đã trừ linh lực
+                if has_player_won(secret_word, letters_guessed):
+                    print("------")
+                    print("Congratulations, you won!")
+                    unique_total = len(set(secret_word))
+                    total_score = (guesses_left + 4 * unique_total) + (3 * len(secret_word))
+                    print(f"Your total score for this game is: {total_score}")
+                    return
+            continue
 
+        # Kiểm tra tính hợp lệ của linh ấn
+        if len(user_input) != 1 or user_input not in string.ascii_lowercase:
+            print(f"Oops! That is not a valid letter: {get_word_progress(secret_word, letters_guessed)}")
+            continue
+            
+        if user_input in letters_guessed:
+            print(f"Oops! You've already guessed that letter: {get_word_progress(secret_word, letters_guessed)}")
+            continue
+            
+        letters_guessed.append(user_input)
+        
+        if user_input in secret_word:
+            print(f"Good guess: {get_word_progress(secret_word, letters_guessed)}")
+            
+            if has_player_won(secret_word, letters_guessed):
+                print("------")
+                print("Congratulations, you won!")
+                unique_total = len(set(secret_word))
+                total_score = (guesses_left + 4 * unique_total) + (3 * len(secret_word))
+                print(f"Your total score for this game is: {total_score}")
+                return
+        else:
+            # Hình phạt tiêu hao linh lực khi đoán sai
+            if user_input in "aeiou":
+                guesses_left -= 2
+            else:
+                guesses_left -= 1
+            print(f"Oops! That letter is not in my word: {get_word_progress(secret_word, letters_guessed)}")
 
+    print("------")
+    print(f"Sorry, you ran out of guesses. The word was {secret_word}")
 
-# When you've completed your hangman function, scroll down to the bottom
-# of the file and uncomment the lines to test
 
 if __name__ == "__main__":
-    # To test your game, uncomment the following three lines.
-
-    # secret_word = choose_word(wordlist)
-    # with_help = False
-    # hangman(secret_word, with_help)
-
-    # After you complete with_help functionality, change with_help to True
-    # and try entering "!" as a guess!
-
-    ###############
-
-    # SUBMISSION INSTRUCTIONS
-    # -----------------------
-    # It doesn't matter if the lines above are commented in or not
-    # when you submit your pset. However, please run ps2_student_tester.py
-    # one more time before submitting to make sure all the tests pass.
-    pass
+    secret_word = choose_word(wordlist)
+    with_help = True
+    hangman(secret_word, with_help)
 
